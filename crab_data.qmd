@@ -1,0 +1,16 @@
+---
+title: "Crabs"
+format: html
+editor: visual
+---
+
+## 
+
+```{r}
+install.packages("lterdatasampler")
+```
+
+```{r}
+library(lterdatasampler)
+View(pie_crab)
+```
