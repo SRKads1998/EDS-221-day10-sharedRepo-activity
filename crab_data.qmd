@@ -16,6 +16,7 @@ echo: false
 library(lterdatasampler)
 library(ggplot2)
 library(tidyverse)
+library(dplyr)
 View(pie_crab)
 ```
 
@@ -27,4 +28,24 @@ ggplot(data = pie_crab, aes(
 ) + geom_point()
   
     
+```
+
+```{r}
+crab_mean <- round(mean(pie_crab$size), 2)
+crab_standard_div <- sd(pie_crab$size)
+crab_sample_size <- pie_crab %>%
+  group_by(size) %>%
+  summarise()
+
+crab_sum1 <- left_join(crab_mean, crab_standard_div, by = "size")
+```
+
+```{r}
+crab_summary <- data.frame(
+  crab_mean = crab_mean,
+  crab_sd = crab_standard_div,
+  crab_size = crab_sample_size
+)
+
+view(crab_summary)
 ```
