@@ -2,6 +2,7 @@
 title: "Crabs"
 format: html
 editor: visual
+excecute: 
 echo: false
 ---
 
@@ -37,15 +38,20 @@ crab_sample_size <- pie_crab %>%
   group_by(size) %>%
   summarise()
 
-crab_sum1 <- left_join(crab_mean, crab_standard_div, by = "size")
+#crab_sum1 <- left_join(crab_mean, crab_standard_div, by = "size")
 ```
 
 ```{r}
 crab_summary <- data.frame(
   crab_mean = crab_mean,
   crab_sd = crab_standard_div,
-  crab_size = crab_sample_size
+  crab_size = crab_sample_size,
+  
 )
 
-view(crab_summary)
+crab_summarys <- crab_summary |> 
+  rename("Mean" = crab_mean, "Standard Deviation" = crab_sd," Carapace Size" = size)
+
+
+view(crab_summarys)
 ```
