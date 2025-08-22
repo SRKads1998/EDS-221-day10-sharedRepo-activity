@@ -2,6 +2,7 @@
 title: "Crabs"
 format: html
 editor: visual
+echo: false
 ---
 
 ## 
@@ -10,7 +11,8 @@ editor: visual
 #install.packages("lterdatasampler")
 ```
 
-```{r}
+```{r, include: FALSE}
+
 library(lterdatasampler)
 library(ggplot2)
 library(tidyverse)
@@ -18,9 +20,11 @@ View(pie_crab)
 ```
 
 ```{r}
+#| fig-cap: "this is my caption"
 ggplot(data = pie_crab, aes(
   y = latitude, 
   x = size)
 ) + geom_point()
+  
     
 ```
