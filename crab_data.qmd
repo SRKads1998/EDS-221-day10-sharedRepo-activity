@@ -7,10 +7,20 @@ editor: visual
 ## 
 
 ```{r}
-install.packages("lterdatasampler")
+#install.packages("lterdatasampler")
 ```
 
 ```{r}
 library(lterdatasampler)
+library(ggplot2)
+library(tidyverse)
 View(pie_crab)
+```
+
+```{r}
+ggplot(data = pie_crab, aes(
+  y = latitude, 
+  x = size)
+) + geom_point()
+    
 ```
