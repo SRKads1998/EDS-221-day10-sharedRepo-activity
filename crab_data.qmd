@@ -6,7 +6,11 @@ excecute:
 echo: false
 ---
 
-## 
+## Crab Data 8/22/2025
+
+This dataset is a analysis of Fillder crab data collected from the Plum Island Ecosystem in the summer of 2016.
+
+During this process, we utilized various functions to better understand qualities of the carapice for each of these sampled crabs. This included finding the mean, standard deviation for the carapi and average sample size for each site. We utilized various functions from the tidyverse to conduct these analysis.
 
 ```{r}
 #install.packages("lterdatasampler")
@@ -53,5 +57,9 @@ crab_summarys <- crab_summary |>
   rename("Mean" = crab_mean, "Standard Deviation" = crab_sd," Carapace Size" = size)
 
 
-view(crab_summarys)
+#view(crab_summarys)
 ```
+
+Citations
+
+Horst, Allison & Brun Julien - **pie_crab - Plum Island Ecosystem LTER fiddler crabs (PIE)** <https://lter.github.io/lterdatasampler/articles/pie_crab_vignette.html>
